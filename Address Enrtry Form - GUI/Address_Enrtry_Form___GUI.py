@@ -1,0 +1,96 @@
+import tkinter as tk
+
+# Create main window
+root = tk.Tk()
+root.title("Address Entry Form")
+
+# Define function to clear form
+def clear_form():
+    first_name_entry.delete(0, tk.END)
+    last_name_entry.delete(0, tk.END)
+    address1_entry.delete(0, tk.END)
+    address2_entry.delete(0, tk.END)
+    city_entry.delete(0, tk.END)
+    state_entry.delete(0, tk.END)
+    postal_code_entry.delete(0, tk.END)
+    country_entry.delete(0, tk.END)
+
+# Define function to submit form
+def submit_form():
+    first_name = first_name_entry.get()
+    last_name = last_name_entry.get()
+    address1 = address1_entry.get()
+    address2 = address2_entry.get()
+    city = city_entry.get()
+    state = state_entry.get()
+    postal_code = postal_code_entry.get()
+    country = country_entry.get()
+    print("First Name: ", first_name)
+    print("Last Name: ", last_name)
+    print("Address Line 1: ", address1)
+    print("Address Line 2: ", address2)
+    print("City: ", city)
+    print("State/Province: ", state)
+    print("Postal Code: ", postal_code)
+    print("Country: ", country)
+
+# Define labels and entries
+first_name_label = tk.Label(root, text="First Name:")
+first_name_entry = tk.Entry(root)
+
+last_name_label = tk.Label(root, text="Last Name:")
+last_name_entry = tk.Entry(root)
+
+address1_label = tk.Label(root, text="Address Line 1:")
+address1_entry = tk.Entry(root)
+
+address2_label = tk.Label(root, text="Address Line 2:")
+address2_entry = tk.Entry(root)
+
+city_label = tk.Label(root, text="City:")
+city_entry = tk.Entry(root)
+
+state_label = tk.Label(root, text="State/Province:")
+state_entry = tk.Entry(root)
+
+postal_code_label = tk.Label(root, text="Postal Code:")
+postal_code_entry = tk.Entry(root)
+
+country_label = tk.Label(root, text="Country:")
+country_entry = tk.Entry(root)
+
+# Define clear and submit buttons
+clear_button = tk.Button(root, text="Clear Form", command=clear_form)
+submit_button = tk.Button(root, text="Submit Form", command=submit_form)
+
+# Grid labels, entries, and buttons
+first_name_label.grid(row=0, column=0)
+first_name_entry.grid(row=0, column=1)
+
+last_name_label.grid(row=1, column=0)
+last_name_entry.grid(row=1, column=1)
+
+address1_label.grid(row=2, column=0)
+address1_entry.grid(row=2, column=1)
+
+address2_label.grid(row=3, column=0)
+address2_entry.grid(row=3, column=1)
+
+city_label.grid(row=4, column=0)
+city_entry.grid(row=4, column=1)
+
+state_label.grid(row=5, column=0)
+state_entry.grid(row=5, column=1)
+
+postal_code_label.grid(row=6, column=0)
+postal_code_entry.grid(row=6, column=1)
+
+country_label.grid(row=7, column=0)
+country_entry.grid(row=7, column=1)
+
+clear_button.grid(row=8, column=0)
+submit_button.grid(row=8, column=1)
+
+# Run main loop
+root.mainloop()
+
